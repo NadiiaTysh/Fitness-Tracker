@@ -1,0 +1,170 @@
+@import './palette';
+
+.registration {
+  display: flex;
+  height: 100vh;
+  font-family: 'Roboto';
+
+  .left {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 77px;
+
+      h1 {
+        text-align: center;
+        margin-bottom: 64px;
+      }
+
+      .gender {
+        display: flex;
+        margin-bottom: 64px;
+
+        > div {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 156px;
+          height: 200px;
+          border-radius: 8px;
+          box-shadow: 0 8px 16px 0 $color7;
+          opacity: 0.6;
+
+          &:hover {
+            cursor: pointer;
+            opacity: 1;
+          }
+
+          &::before {
+            content: '';
+            display: block;
+            width: 159px;
+            height: 173px;
+            background-size: cover;
+          }
+
+          &.female {
+            margin-right: 15px;
+
+            &::before {
+              background-image: url("../assets/female.png");
+            }
+          }
+
+          &.male {
+            &::before {
+              background-image: url("../assets/male.png");
+            }
+          }
+
+          span {
+            position: absolute;
+            bottom: 19px;
+          }
+
+          &.selected {
+            opacity: 1;
+          }
+        }
+      }
+
+      .inputRow {
+        width: 461px;
+        display: flex;
+        justify-content: space-between;
+        color: $color2;
+        padding-top: 23px;
+        padding-bottom: 21px;
+        border-bottom: 1px solid $color6;
+
+        label {
+          color: $color5;
+          font-weight: 300;
+        }
+
+        input {
+          font-size: 16px;
+          font-weight: 500;
+          color: $color5;
+          background-color: transparent;
+          border-color: transparent;
+          outline: transparent;
+          text-align: right;
+          width: 250px;
+          padding-top: 0px;
+          padding-bottom: 0px;
+
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+
+          &::placeholder {
+            font-weight: 400;
+          }
+        }
+      }
+
+      .error {
+        color: #ab250f;
+        margin-top: 15px;
+      }
+
+      button {
+        background-color: #26c8a8;
+        color: #fff;
+        border-color: transparent;
+        border-radius: 24px;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 15px 23px;
+        letter-spacing: .5px;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+        margin-top: 31px;
+        outline: transparent;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $color4;
+        }
+
+        &.clearData {
+          background-color: #c82652;
+          color: #fff;
+          border-color: transparent;
+          border-radius: 24px;
+          font-size: 14px;
+          font-weight: 500;
+          padding: 15px 23px;
+          letter-spacing: .5px;
+          outline: transparent;
+        }
+        &:disabled {
+          opacity: .3;
+          &:hover {
+            cursor: auto;
+          }
+        }
+        &:not(:last-child) {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+
+  .right {
+    background-image: url("../assets/registration-background.png");
+    background-size: cover;
+    background-position: top center;
+    width: 50%;
+  }
+}
